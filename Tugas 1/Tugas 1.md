@@ -10,11 +10,11 @@
 
 Oleh : 
 
-Nama 			: John Doe	
+Nama 			: Mohammad Ilham Ramadani
 
 Kelas 			: D3 IT A
 
-NRP 			: 31225000xx
+NRP 			: 3122500021
 
 Dosen Pengampu 	: Dr. Ferry Astika Saputra ST, M.Sc
 
