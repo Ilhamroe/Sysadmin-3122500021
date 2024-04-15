@@ -15,7 +15,9 @@
 
 **Dr. Ferry Astika Saputra ST, M.Sc**
 
-Melakukan install NTP Client
+
+
+#### Melakukan install NTP Client
 
 1.  Lakukan instalasi paket layanan sinkronisasi waktu → sudo apt
     install systemd-timesyncd
@@ -26,7 +28,7 @@ Melakukan install NTP Client
 > bagian dari systemd dan digunakan untuk sinkronisasi waktu pada sistem
 > Linux.
 
-1.  Melakukan konfigurasi timezone ke Asia/Jakarta → sudo timedatectl
+2.  Melakukan konfigurasi timezone ke Asia/Jakarta → sudo timedatectl
     set-timezone Asia/Jakarta
 
 > <img src="./media/image77.png"/>
@@ -35,7 +37,7 @@ Melakukan install NTP Client
 > Asia/Jakarta. Ini memastikan bahwa sistem menggunakan zona waktu yang
 > benar.
 
-1.  Melakukan konfigurasi Real Time Clock (RTC) untuk merefer ke UTC
+3.  Melakukan konfigurasi Real Time Clock (RTC) untuk merefer ke UTC
     (Coordinated Universal Time) → sudo timedatectl set-local-rtc false
 
 > <img src="./media/image92.png"/>
@@ -54,7 +56,7 @@ Melakukan install NTP Client
 > untuk menyesuaikan waktu secara otomatis dengan server waktu
 > eksternal.
 
-1.  Menyunting file timesyncd.conf untuk mengarah ke NTP server terdekat
+5.  Menyunting file timesyncd.conf untuk mengarah ke NTP server terdekat
     untuk mendapatkan waktu delay terpendek. Biasanya setiap organisasi
     atau negara mempunyai NTP Server sendiri → sudo nano
     /etc/systemd/timesyncd.conf
@@ -64,7 +66,7 @@ Melakukan install NTP Client
 > Command ini membuka file konfigurasi systemd-timesyncd menggunakan
 > editor nano. Atur value dari NTP, NTP=0.id.pool.ntp.org.
 
-1.  Restart layanan sinkronisasi waktu dan pastikan layanan berjalan
+6.  Restart layanan sinkronisasi waktu dan pastikan layanan berjalan
     dengan benar
 
 > sudo systemctl restart systemd-timesyncd
@@ -85,7 +87,7 @@ Melakukan install NTP Client
 >
 > Dapat dilihat status active(running)
 
-1.  Lakukan pengecekan kesesuaian tanggal system dengan perintah →
+7.  Lakukan pengecekan kesesuaian tanggal system dengan perintah →
     timedatectl
 
 > <img src="./media/image100.png"/>
@@ -93,7 +95,7 @@ Melakukan install NTP Client
 > Command ini digunakan untuk menampilkan informasi waktu dan tanggal
 > saat ini, serta pengaturan zona waktu dan sinkronisasi waktu lainnya.
 
-1.  <span class="mark">Melihat hasil dengan sudo timedatectl
+8.  <span class="mark">Melihat hasil dengan sudo timedatectl
     timesync-status</span>
 
 > <img src="./media/image83.png"/>
@@ -104,7 +106,7 @@ Melakukan install NTP Client
 > mengatur dan mengonfigurasi waktu dan sinkronisasi waktu pada sistem
 > Linux menggunakan systemd-timesyncd dan timedatectl.
 
-Apache 2 + PHP-FM
+#### Apache 2 + PHP-FM
 
 1.  Install Apache2 → sudo apt -y install apache2
 
@@ -114,7 +116,7 @@ Apache 2 + PHP-FM
 > memungkinkan instalasi untuk berjalan tanpa interaksi pengguna dengan
 > menyetujui semua pertanyaan konfirmasi.
 
-1.  Melakukan konfigurasi Apache2
+2.  Melakukan konfigurasi Apache2
 
 - sudo nano /etc/apache2/conf-enabled/security.conf
 
@@ -171,7 +173,7 @@ Apache 2 + PHP-FM
 > pada langkah-langkah sebelumnya diterapkan tanpa memengaruhi
 > ketersediaan layanan web.
 
-1.  Melakukan test ke web browser
+3.  Melakukan test ke web browser
 
 > <img src="./media/image104.png"/>
 >
@@ -183,7 +185,7 @@ Apache 2 + PHP-FM
 > diperlukan untuk memastikan server web berjalan dengan pengaturan yang
 > diinginkan.
 
-Install PHP 8.2
+#### Install PHP 8.2
 
 1.  sudo apt -y install php8.2 php8.2-mbstring php-pear
 
@@ -193,7 +195,7 @@ Install PHP 8.2
 > tambahan PHP Pear. Tujuannya adalah untuk menginstal PHP dan modul
 > yang diperlukan untuk menjalankan skrip PHP.
 
-1.  mengecek php version → php -v
+2.  mengecek php version → php -v
 
 > <img src="./media/image59.png"/>
 >
@@ -201,7 +203,7 @@ Install PHP 8.2
 > untuk memeriksa apakah instalasi PHP berhasil dilakukan dan untuk
 > mengetahui versi PHP yang digunakan.
 
-1.  verify installation to create a test script
+3.  verify installation to create a test script
 
 > nano php_test.php
 >
@@ -218,7 +220,7 @@ Install PHP 8.2
 > Perintah ini mencoba mengeksekusi file php_test.php dan menampilkan
 > beberapa baris pertama outputnya menggunakan perintah head.
 
-1.  Install PHP-FM → sudo apt -y install php-fpm
+4.  Install PHP-FM → sudo apt -y install php-fpm
 
 > <img src="./media/image87.png"/>
 >
@@ -227,7 +229,7 @@ Install PHP 8.2
 > Tujuannya adalah untuk menginstal PHP-FPM sebagai alternatif untuk
 > menjalankan PHP.
 
-1.  Mengkonfigurasi PHP-FM pada file konfigurasi Apache
+5.  Mengkonfigurasi PHP-FM pada file konfigurasi Apache
 
 > sudo nano /etc/apache2/sites-available/default-ssl.conf
 >
@@ -262,7 +264,7 @@ Install PHP 8.2
 > mengonfigurasi mereka. Tujuannya adalah untuk menerapkan perubahan
 > konfigurasi yang telah dilakukan.
 
-1.  Melakukan test validasi terhadap PHP-FM dengan membuat file info.php
+6.  Melakukan test validasi terhadap PHP-FM dengan membuat file info.php
     di root document → sudo nano /var/www/html/info.php
 
 > <img src="./media/image97.png"/>
@@ -271,7 +273,7 @@ Install PHP 8.2
 > editor nano. Tujuannya adalah untuk membuat file info.php yang akan
 > menampilkan informasi konfigurasi PHP dan server web.
 
-1.  Melakukan test di browser
+7.  Melakukan test di browser
 
 > <img src="./media/image5.png"/>
 >
@@ -282,7 +284,7 @@ Install PHP 8.2
 > menggunakan PHP-FPM, dan membuat file info.php untuk menguji
 > konfigurasi PHP dan server web.
 
-MELAKUKAN INSTALL Database System : MariaDB
+#### MELAKUKAN INSTALL Database System : MariaDB
 
 1.  sudo apt -y install mariadb-server
 
@@ -292,7 +294,7 @@ MELAKUKAN INSTALL Database System : MariaDB
 > instalasi untuk berjalan tanpa meminta konfirmasi tambahan dari
 > pengguna.
 
-1.  sudo nano /etc/mysql/mariadb.conf.d/50-server.cnf
+2.  sudo nano /etc/mysql/mariadb.conf.d/50-server.cnf
 
 > <img src="./media/image33.png"/>
 >
@@ -301,14 +303,14 @@ MELAKUKAN INSTALL Database System : MariaDB
 > pengaturan server MariaDB, seperti port default, pengaturan jaringan,
 > dan parameter lainnya.
 
-1.  sudo systemctl restart mariadb
+3.  sudo systemctl restart mariadb
 
 > <img src="./media/image1.png"/>
 >
 > Perintah ini me-restart layanan MariaDB setelah mengubah
 > konfigurasinya. Ini diperlukan agar perubahan konfigurasi diterapkan.
 
-1.  Inisial Konfigurasi dan testing database MariaDB Server
+4.  Inisial Konfigurasi dan testing database MariaDB Server
 
 - sudo mysql_secure_installation
 
@@ -322,7 +324,7 @@ MELAKUKAN INSTALL Database System : MariaDB
 > menghapus pengguna anonim, menonaktifkan akses remote root, dan
 > menghapus database pengujian.
 
-- \# connect to MariaDB → sudo mysql
+- Connect to MariaDB → sudo mysql
 
 > <img src="./media/image101.png"/>
 >
@@ -395,7 +397,7 @@ MELAKUKAN INSTALL Database System : MariaDB
 > Command untuk memungkingkan pengguna membuang atau menghapus database
 > yang sudah ada.
 
-MELAKUKAN INSTALL PHPMYADMIN
+#### MELAKUKAN INSTALL PHPMYADMIN
 
 1.  sudo apt install phpmyadmin
 
@@ -407,12 +409,12 @@ MELAKUKAN INSTALL PHPMYADMIN
 
 > <img src="./media/image27.png"/>
 
-1.  Choose the option Yes to configure the database for phpmyadmin by
+3.  Choose the option Yes to configure the database for phpmyadmin by
     itself using bdconfig-common,
 
 > <img src="./media/image75.png"/>
 
-1.  Masukkan password phpmyadmin
+4.  Masukkan password phpmyadmin
 
 > <img src="./media/image57.png"/>
 >
@@ -421,7 +423,7 @@ MELAKUKAN INSTALL PHPMYADMIN
 > Konfigurasi phpmyadmin mulai dari memilih web server, configure the
 > database for phpmyadmin, dan password untuk memulai menggunakannya.
 
-1.  Create Apache Configuration for phpMyAdmin → sudo nano
+5.  Create Apache Configuration for phpMyAdmin → sudo nano
     /etc/apache2/apache2.conf
 
 > <img src="./media/image105.png"/>
@@ -431,7 +433,7 @@ MELAKUKAN INSTALL PHPMYADMIN
 > untuk memuat konfigurasi PHPMyAdmin. Ini biasanya melibatkan
 > menambahkan baris konfigurasi khusus ke file ini.
 
-1.  Coba membuka phpmyadmin di web browser<img src="./media/image51.png"/>
+6.  Coba membuka phpmyadmin di web browser<img src="./media/image51.png"/>
 
 > <img src="./media/image98.png"/>
 >
@@ -439,7 +441,7 @@ MELAKUKAN INSTALL PHPMYADMIN
 > /phpmyadmin/. Kemudian masukkan username dan password untuk mulai
 > menggunakan database.
 
-1.  Menambahkan privillege ke user phpmyadmin
+7.  Menambahkan privillege ke user phpmyadmin
 
 - Login ke mariadb → sudo mariadb -u root -p
 
@@ -467,7 +469,7 @@ MELAKUKAN INSTALL PHPMYADMIN
 >
 > Web broweser phpmyadmin siap untuk digunakan.
 
-MELAKUKAN INSTALL Email System
+#### MELAKUKAN INSTALL Email System
 
 POSTFIX : SMTP Server (TCP 25)
 
@@ -483,14 +485,14 @@ POSTFIX : SMTP Server (TCP 25)
 - “No configuration” digunakan agar Postfix tidak melakukan config
   secara otomatis ketika diinstal.
 
-1.  sudo cp /usr/share/postfix/main.cf.dist /etc/postfix/main.cf
+3.  sudo cp /usr/share/postfix/main.cf.dist /etc/postfix/main.cf
 
 > <img src="./media/image96.png"/>
 
 - Command untuk mengcopy file config Postfix default dari direktori
   /usr/share/postfix/main.cf.dist ke /etc/postfix/main.cf
 
-1.  sudo nano /etc/postfix/main.cf
+4.  sudo nano /etc/postfix/main.cf
 
 > uncomment berikut
 >
@@ -553,25 +555,25 @@ POSTFIX : SMTP Server (TCP 25)
 >
 > <img src="./media/image20.png"/>
 
-1.  sudo newaliases
+5.  sudo newaliases
 
 > <img src="./media/image82.png"/>
 
-1.  systemctl restart postfix
+6.  systemctl restart postfix
 
 > <img src="./media/image89.png"/>
 
-Menambahkan konfigurasi anti spam
+#### Menambahkan konfigurasi anti spam
 
 1.  sudo nano /etc/postfix/main.cf
 
 > <img src="./media/image12.png"/>
 
-1.  sudo systemctl restart postfix
+2.  sudo systemctl restart postfix
 
 > <img src="./media/image81.png"/>
 
-DOVECOT : IMAP4 (TCP 143) and POP3 (TCP110) Server
+##### DOVECOT : IMAP4 (TCP 143) and POP3 (TCP110) Server
 
 Lakukan instalasi Dovecot Server
 
@@ -579,11 +581,11 @@ Lakukan instalasi Dovecot Server
 
 > <img src="./media/image52.png"/>
 
-1.  sudo nano /etc/dovecot/dovecot.conf
+2.  sudo nano /etc/dovecot/dovecot.conf
 
 > <img src="./media/image63.png"/>
 
-1.  sudo nano /etc/dovecot/conf.d/10-auth.conf
+3.  sudo nano /etc/dovecot/conf.d/10-auth.conf
 
 > <img src="./media/image28.png"/>
 >
@@ -591,52 +593,52 @@ Lakukan instalasi Dovecot Server
 >
 > <img src="./media/image50.png"/>
 
-1.  sudo nano /etc/dovecot/conf.d/10-mail.conf
+4.  sudo nano /etc/dovecot/conf.d/10-mail.conf
 
 > <img src="./media/image90.png"/>
 
-1.  sudo nano /etc/dovecot/conf.d/10-master.conf
+5.  sudo nano /etc/dovecot/conf.d/10-master.conf
 
 > <img src="./media/image56.png"/>
 
-1.  sudo systemctl restart dovecot
+6.  sudo systemctl restart dovecot
 
 > <img src="./media/image84.png"/>
 
-FINAL CHECK untuk semua SERVICES :
+7. FINAL CHECK untuk semua SERVICES :
 
 netstat -a\| grep LISTEN
 
 <img src="./media/image6.png"/>
 
-Melakukan Cek terhadap Layanan Posfix
+8. Melakukan Cek terhadap Layanan Posfix
 
 telnet mail.kelompok6.local 25
 
 <img src="./media/image44.png"/>
 
-INSTALL THUNDERBIRD (EMAIL GUI CLIENT)
+#### INSTALL THUNDERBIRD (EMAIL GUI CLIENT)
 
 1.  flatpak install flathub org.mozilla.Thunderbird
 
 > <img src="./media/image8.png"/>
 
-1.  install thunderbird GUI on
+2.  install thunderbird GUI on
     https://flathub.org/apps/org.mozilla.Thunderbird
 
 > <img src="./media/image35.png"/>
 
-1.  Menambahkan 2 akun email
+3.  Menambahkan 2 akun email
 
 > <img src="./media/image54.png"/>
 
-1.  Mencoba saling send email
+4.  Mencoba saling send email
 
 > <img src="./media/image10.png"/>
 >
 > <img src="./media/image3.png"/>
 
-Install webmail (RoundCube)
+#### Install webmail (RoundCube)
 
 1.  Create a Database for RoundCube
 
@@ -656,7 +658,7 @@ Install webmail (RoundCube)
   'roundcube'@'localhost'. Kata sandi 'password' adalah kata sandi yang
   diberikan untuk pengguna 'roundcube'.
 
-1.  Install and Configure RoundCube
+2.  Install and Configure RoundCube
 
 > sudo apt -y install roundcube roundcube-mysql
 >
@@ -668,13 +670,13 @@ Install webmail (RoundCube)
 > aplikasi webmail Roundcube dan modul MySQL yang diperlukan untuk
 > Roundcube. Pilih no pada pertanyaan configure database for roundcube.
 
-1.  cd /usr/share/dbconfig-common/data/roundcube/install
+3.  cd /usr/share/dbconfig-common/data/roundcube/install
 
 > <img src="./media/image46.png"/>
 >
 > Command ini mengubah direktori ke lokasi instalasi Roundcube.
 
-1.  sudo mysql -u roundcube -D roundcube -p \< mysql dan masukkan
+4.  sudo mysql -u roundcube -D roundcube -p \< mysql dan masukkan
     password mariaDB roundcube (password)
 
 > <img src="./media/image93.png"/>
@@ -682,7 +684,7 @@ Install webmail (RoundCube)
 > Perintah untuk mengimpor skema database Roundcube ke dalam database
 > "roundcube".
 
-1.  sudo nano /etc/roundcube/debian-db.php
+5.  sudo nano /etc/roundcube/debian-db.php
 
 > <img src="./media/image99.png"/>
 >
@@ -690,7 +692,7 @@ Install webmail (RoundCube)
 > menggunakan editor nano. File ini berisi konfigurasi database untuk
 > Roundcube.
 
-1.  sudo nano /etc/roundcube/config.inc.php
+6.  sudo nano /etc/roundcube/config.inc.php
 
 > <img src="./media/image108.png"/>
 >
@@ -698,7 +700,7 @@ Install webmail (RoundCube)
 > untuk diedit menggunakan editor nano. File ini berisi konfigurasi umum
 > untuk aplikasi Roundcube.
 
-1.  sudo nano /etc/apache2/conf-enabled/roundcube.conf
+7.  sudo nano /etc/apache2/conf-enabled/roundcube.conf
 
 > <img src="./media/image60.png"/>
 >
@@ -707,7 +709,7 @@ Install webmail (RoundCube)
 > konfigurasi untuk mengonfigurasi akses ke aplikasi Roundcube melalui
 > server web Apache.
 
-1.  sudo systemctl restart apache2
+8.  sudo systemctl restart apache2
 
 > Ini me-restart layanan Apache setelah mengubah konfigurasi. Ini
 > diperlukan agar perubahan konfigurasi yang dilakukan diterapkan dan
@@ -719,7 +721,7 @@ Install webmail (RoundCube)
 >
 > <img src="./media/image61.png"/>
 
-1.  Mencoba send email
+10.  Mencoba send email
 
 > <img src="./media/image29.png"/>
 >
