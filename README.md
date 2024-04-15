@@ -7,6 +7,6 @@ Sekumpulan Tugas Seputar Workshop Administrasi Jaringan
 #5 : w3bEm4ilsy5t3m<br><br>
 Click Here : [Tugas 1](https://github.com/Ilhamroe/Workshop-Administrasi-Jaringan/tree/main/Tugas1)<br>
 Click Here : [Tugas 2](https://github.com/Ilhamroe/Workshop-Administrasi-Jaringan/tree/main/Tugas2)<br>
-Click Here : [Tugas 3](https://github.com/Ilhamroe/Workshop-Administrasi-Jaringan/blob/main/Tugas3/Tugas3.md)<br>
+Click Here : [Tugas 3](https://github.com/Ilhamroe/Workshop-Administrasi-Jaringan/blob/main/Tugas3/Tugas%203.md)<br>
 Click Here : [Tugas 4](https://github.com/Ilhamroe/Workshop-Administrasi-Jaringan/blob/main/Tugas4/Tugas4.md)<br>
 Click Here : [Tugas 5](https://github.com/Ilhamroe/Workshop-Administrasi-Jaringan/blob/main/Tugas5/Tugas5.md)
