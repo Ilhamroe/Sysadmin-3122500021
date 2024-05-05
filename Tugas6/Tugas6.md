@@ -29,7 +29,7 @@
 
 </div>
 
-    Pada gambar arsitektur di atas merupakan cara kerja web server dan client secara umum dan monolit. Berikut adalah penjelasan dari Arsitektur web server dan client:
+Pada gambar arsitektur di atas merupakan cara kerja web server dan client secara umum dan monolit. Berikut adalah penjelasan dari Arsitektur web server dan client:
 - User atau Pengguna: mengakses perangkat untuk meminta baik dari data maupun file yang nantinya ditampilkan di User Interface.
 - Network atau Internet: berguna untuk menghubungkan perangkat dan server melalui aplikasi web permintaan (request) dikirim melalui internet ke server.
 - REST API: Penghubung antara client dan server. Digunakan untuk menerima request dari klien, memproses, dan mengirimkan respon balik.
@@ -48,7 +48,7 @@
 
 </div>
 
-    Pada Single Server Architecture of Web Server terdapat satu server yang bertanggung jawab untuk memproses dan menyajikan data dari konten web untuk client. Hal ini cocok untuk situs web kecil dengan traffic yang rendah. Namun disisi lain arsitektur diatas memiliki keterbatasan dalam hal skalabilitas dan toleransi kesalahan. Jika server down, seluruh layanan menjadi tidak tersedia. Berikut adalah penjelasan dari skema di atas:
+Pada Single Server Architecture of Web Server terdapat satu server yang bertanggung jawab untuk memproses dan menyajikan data dari konten web untuk client. Hal ini cocok untuk situs web kecil dengan traffic yang rendah. Namun disisi lain arsitektur diatas memiliki keterbatasan dalam hal skalabilitas dan toleransi kesalahan. Jika server down, seluruh layanan menjadi tidak tersedia. Berikut adalah penjelasan dari skema di atas:
 - User -> DNS Server : meminta, mengetik atau mengklik domain yang ada pada browser yang digunakan.
 - DNS Server -> User : Mencari alamat IP yang sesuai dengan nama domain, setelah ditemukan, mengirimkan respon balik dengan alamat IP web server yang sesuai.
 - User -> Web Server : Ketika pengguna sudah menerima respon dari DNS Server yang berisi alamat IP dari web server, browser pengguna membuat permintaan HTTP langsung ke alamat IP yang diberikan, bukan ke nama domain.
@@ -66,7 +66,7 @@
 
 </div>
 
-    Dalam Multi-Tier (Load-Balanced) Architecture, terdapat beberapa server yang digunakan untuk mendistribusikan beban kerja dan memastikan high availability. Pada arsitektur ini juga mendistribusikan permintaan masuk secara merata ke seluruh cluster server web. Setiap server dapat menyajikan konten web secara independen, dan jika salah satu server gagal, maka mengalihkan ke traffic pada server yang sehat, hal ini memastikan layanan tidak terganggu. Berikut adalah skema dari arsitektur di atas:
+Dalam Multi-Tier (Load-Balanced) Architecture, terdapat beberapa server yang digunakan untuk mendistribusikan beban kerja dan memastikan high availability. Pada arsitektur ini juga mendistribusikan permintaan masuk secara merata ke seluruh cluster server web. Setiap server dapat menyajikan konten web secara independen, dan jika salah satu server gagal, maka mengalihkan ke traffic pada server yang sehat, hal ini memastikan layanan tidak terganggu. Berikut adalah skema dari arsitektur di atas:
 - Client (end users) : pengguna yang mengakses browser melalui berbagai perangkat, seperti handphone, laptop, tablet, dan pc
 - Internet : jaringan global yang menghubungkan berbagai perangkat dan server di seluruh dunia.
 - Load Balancer : memantau kesehatan server aplikasi dan mengalihkan lalu lintas dari server yang kelebihan beban ke server lain yang memiliki kapasitas lebih. Software load balancer dan hardware load balancer memiliki fungsi yang sama, yaitu mendistribusikan lalu lintas secara merata di antara beberapa server aplikasi.
@@ -84,7 +84,7 @@
 
 </div>
 
-    Pada gambar Working of Web Server diatas terdapat dua skenario untuk melakukan permintaan dari Web Client ke Static Data Store atau Application Data Store. Dari gambar tersebut, jalur tergantung pada apakah itu permintaan untuk data statis atau membutuhkan pemrosesan lebih lanjut dari server aplikasi. Pada akhirnya, respons dikirimkan kembali ke pengguna melalui web server. Berikut merupakan proses dari kedua skenario di atas:
+Pada gambar Working of Web Server diatas terdapat dua skenario untuk melakukan permintaan dari Web Client ke Static Data Store atau Application Data Store. Dari gambar tersebut, jalur tergantung pada apakah itu permintaan untuk data statis atau membutuhkan pemrosesan lebih lanjut dari server aplikasi. Pada akhirnya, respons dikirimkan kembali ke pengguna melalui web server. Berikut merupakan proses dari kedua skenario di atas:
 
 1. Web Client -> Web Server -> Static Data Store
    - Web Client : membuat permintaan HTTP ke aplikasi web melalui peramban mereka, seperti sebelumnya.
