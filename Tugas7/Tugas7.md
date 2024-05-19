@@ -342,7 +342,7 @@ menampilkan daftar container yang berjalan di sistem docker, menggunakan command
 
    ![image](https://github.com/Ilhamroe/Workshop-Administrasi-Jaringan/assets/111882022/2b0bfe71-39dc-49f5-b5b2-c184dea77c0d)
 
-2. Masukkan content berikut dan save dengan klik "shift + w + q + !"
+2. Masukkan content berikut dan save dengan klik "shift : + w + q + !"
 
    ![image](https://github.com/Ilhamroe/Workshop-Administrasi-Jaringan/assets/111882022/99b63c34-8f9f-4c02-89c9-e76a02eb5f47)
 
@@ -742,43 +742,138 @@ menampilkan daftar container yang berjalan di sistem docker, menggunakan command
 
 #### Installing Docker Compose
 
-1. no1
+1. Lihat versi dari docker compose menggunakan command berikut:
+
+   `docker-compose version`
 
     <div align="center">
 
-   //image
-
-   </div>
-
-2. no2
-
-    <div align="center">
-
-   //image
+   ![image](https://github.com/Ilhamroe/Workshop-Administrasi-Jaringan/assets/111882022/4f98b981-5670-4049-bc5b-cec476e0e695)
 
    </div>
 
 #### Creating our Compose File
 
-1. no1
+1. Buat file docker-compose.yml, meggunakan command berikut, save menggunakan tombol "shift : + w + q + !"
+   
+   `vi docker-compose.yml`
 
     <div align="center">
 
-   //image
-
-   </div>
-
-2. no2
-
-    <div align="center">
-
-   //image
+   ![image](https://github.com/Ilhamroe/Workshop-Administrasi-Jaringan/assets/111882022/13f3f233-eaae-4c69-9b59-d651883c1cd4)
 
    </div>
 
 #### Defining the App Service
 
-1. no1
+1. Definisikan layanan aplikasi dengan kode berikut:
+   
+   `docker run -dp 3000:3000 \
+  -w /app -v $PWD:/app \
+  --network todo-app \
+  -e MYSQL_HOST=mysql \
+  -e MYSQL_USER=root \
+  -e MYSQL_PASSWORD=secret \
+  -e MYSQL_DB=todos \
+  node:10-alpine \
+  sh -c "yarn install && yarn run dev"`
+
+    <div align="center">
+
+   ![image](https://github.com/Ilhamroe/Workshop-Administrasi-Jaringan/assets/111882022/83e42a68-94e2-423a-89a5-a1bde2bff7d4)
+
+   </div>
+
+2. Tambahkan baris kode mulai dari image, command, ports, working_dir, volumes, dan environment:
+   
+         version: "3.7"
+
+         services:
+         app:
+            image: node:10-alpine
+            command: sh -c "yarn install && yarn run dev"
+            ports:
+               - 3000:3000
+            working_dir: /app
+            volumes:
+               - ./:/app
+            environment:
+               MYSQL_HOST: mysql
+               MYSQL_USER: root
+               MYSQL_PASSWORD: secret
+               MYSQL_DB: todos
+
+    <div align="center">
+
+   ![image](https://github.com/Ilhamroe/Workshop-Administrasi-Jaringan/assets/111882022/92a4dbff-1c33-4354-a27f-475b1a7f5453)
+
+   </div>
+
+#### Defining the MySQL Service
+
+1. Definisikan layanan aplikasi dengan kode berikut:
+   
+   `docker run -d \
+  --network todo-app --network-alias mysql \
+  -v todo-mysql-data:/var/lib/mysql \
+  -e MYSQL_ROOT_PASSWORD=secret \
+  -e MYSQL_DATABASE=todos \
+  mysql:5.7`
+
+    <div align="center">
+
+   ![image](https://github.com/Ilhamroe/Workshop-Administrasi-Jaringan/assets/111882022/4836fd75-e722-46ac-b0b4-78bdae267d05)
+
+   </div>
+
+2. Tambahkan baris kode mulai dari mysql image:
+
+         mysql:
+            image: mysql:5.7
+
+    <div align="center">
+
+   ![image](https://github.com/Ilhamroe/Workshop-Administrasi-Jaringan/assets/111882022/f8903ffd-41e1-423a-bb9e-acf987fc5db6)
+
+   </div>
+
+3. Tambahkan baris kode mendifinisikan volume mapping:
+
+         mysql:
+            image: mysql:5.7
+            volumes:
+               - todo-mysql-data:/var/lib/mysq
+         volumes:
+            todo-mysql-data:
+
+    <div align="center">
+
+   ![image](https://github.com/Ilhamroe/Workshop-Administrasi-Jaringan/assets/111882022/73c5f432-8c12-458c-9829-d3d5f52ffe96)
+
+   </div>
+
+4. Tambahkan baris kode environment dari mysql:
+
+         mysql:
+            image: mysql:5.7
+            volumes:
+               - todo-mysql-data:/var/lib/mysql
+            environment: 
+               MYSQL_ROOT_PASSWORD: secret
+               MYSQL_DATABASE: todos
+
+         volumes:
+            todo-mysql-data:
+
+    <div align="center">
+
+   ![image](https://github.com/Ilhamroe/Workshop-Administrasi-Jaringan/assets/111882022/4d1964b0-b263-4bca-895c-2fa599fa66dc)
+
+   </div>
+5. Tambahkan baris kode mulai dari mysql image:
+
+         mysql:
+            image: mysql:5.7
 
     <div align="center">
 
@@ -786,47 +881,36 @@ menampilkan daftar container yang berjalan di sistem docker, menggunakan command
 
    </div>
 
-2. no2
-
-    <div align="center">
-
-   //image
-
-   </div>
 
 #### Running our Application Stack
 
-1. no1
+1. Matikan dulu container yang berjalan pada ports :3000, kemudian jalankan application stack dengan command berikut:
+   
+   `docker-compose up -d`
 
     <div align="center">
 
-   //image
+   ![image](https://github.com/Ilhamroe/Workshop-Administrasi-Jaringan/assets/111882022/fe48c0cc-d23c-4e68-ac06-370590d2268f)
 
    </div>
 
-2. no2
+2. Melihat logs dari tiap service
 
     <div align="center">
 
-   //image
+   ![image](https://github.com/Ilhamroe/Workshop-Administrasi-Jaringan/assets/111882022/e250ffba-856b-4119-810b-ea94ed12e7b4)
 
    </div>
 
 #### Tearing it All Down
 
-1. no1
+1. Saat ingin menghilangkan semuanya, gunakan command berikut, maka kontainer akan berhenti dan jaringan akan dihapus
+
+   `docker-compose down`
 
     <div align="center">
 
-   //image
-
-   </div>
-
-2. no2
-
-    <div align="center">
-
-   //image
+   ![image](https://github.com/Ilhamroe/Workshop-Administrasi-Jaringan/assets/111882022/2ec04b37-a3f4-46c0-90a1-4014b8576c48)
 
    </div>
 
@@ -834,54 +918,48 @@ menampilkan daftar container yang berjalan di sistem docker, menggunakan command
 
 #### Image Layering
 
-1. no1
+1. Mengecek docker image history  dari docker-101
 
     <div align="center">
 
-   //image
-
+   ![image](https://github.com/rifqirayita8/SysAdmin-3122500027/assets/114125588/ea2919ae-41ba-4b9d-b764-0da1826743ea)
    </div>
-
-2. no2
+   Layer teratas adalah layer terbaru, dan urut ke bawah. Serta disini anda bisa melihat ukuran dari tiap layer containernya.
 
     <div align="center">
-
-   //image
-
-   </div>
 
 #### Layer Caching
 
-1. no1
+1. Buka Dockerfile yang ada di folder app
 
     <div align="center">
 
-   //image
-
+   ![image](https://github.com/rifqirayita8/SysAdmin-3122500027/assets/114125588/9cc4bc6f-ec69-4e22-8009-1ab8858adc77)
    </div>
 
-2. no2
+2. Coba build image baru
 
     <div align="center">
 
-   //image
-
+   ![image](https://github.com/rifqirayita8/SysAdmin-3122500027/assets/114125588/5847fa6d-f914-4d3d-863a-bc7114d65efc)
    </div>
+   
+   Bisa dilihat layer melakukan rebuild
 
-#### Multi-Stage Builds
-
-1. no1
+3. Coba ubah title yang ada di src/static/index.html
 
     <div align="center">
 
-   //image
-
+   ![image](https://github.com/rifqirayita8/SysAdmin-3122500027/assets/114125588/65657712-c58e-4de6-bf59-138f1982a5e2)
    </div>
+   
 
-2. no2
+4. Build docker image lagi
 
     <div align="center">
 
-   //image
+   ![image](https://github.com/rifqirayita8/SysAdmin-3122500027/assets/114125588/77646528-de79-4f15-a5e5-5529f6afa469)
 
    </div>
+   
+   Bisa dilihat build image sangat cepat, karena step 1-4 menggunakan cache.
