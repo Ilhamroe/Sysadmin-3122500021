@@ -6,7 +6,8 @@ Sekumpulan Tugas Seputar Workshop Administrasi Jaringan
 #4 : h0wto1nt3rnetW0rk&Dn5<br>
 #5 : w3bEm4ilsy5t3m<br>
 #6 : Arch1t3cTur3w3bs3Rv3r4NdCl13nt<br>
-#7 : D0ck3rArch1t3ctUr3<br><br>
+#7 : D0ck3rArch1t3ctUr3<br>
+#8 : pr0j3cTf1n4l<br><br>
 Click Here : [Tugas 1](https://github.com/Ilhamroe/Workshop-Administrasi-Jaringan/tree/main/Tugas1)<br>
 Click Here : [Tugas 2](https://github.com/Ilhamroe/Workshop-Administrasi-Jaringan/tree/main/Tugas2)<br>
 Click Here : [Tugas 3](https://github.com/Ilhamroe/Workshop-Administrasi-Jaringan/blob/main/Tugas3/Tugas%203.md)<br>
@@ -15,4 +16,6 @@ Click Here : [Tugas 5](https://github.com/Ilhamroe/Workshop-Administrasi-Jaringa
 Click Here : [Tugas 6](https://github.com/Ilhamroe/Workshop-Administrasi-Jaringan/blob/main/Tugas6/Tugas6.md)
 <br>
 Click Here : [Tugas 7](https://github.com/Ilhamroe/Workshop-Administrasi-Jaringan/blob/main/Tugas7/Tugas7.md)
+<br>
+Click Here : [Tugas Project](https://github.com/Ilhamroe/Workshop-Administrasi-Jaringan/blob/main/TugasProject/TugasProject.md)
 <br>
