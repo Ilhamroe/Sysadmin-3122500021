@@ -260,7 +260,7 @@ Dalam konteks menggunakan Docker untuk pengembangan dan pengujian aplikasi E-Kli
 
 <div align="center">
 
-![image](https://github.com/Ilhamroe/Sysadmin-3122500021/assets/111882022/fe3acd1b-3a43-40e6-bd42-ffde50106773)
+![image](https://github.com/Ilhamroe/Sysadmin-3122500021/assets/111882022/fa50eab9-862b-49d5-b5b9-dc7dfee2cd03)
 
 </div>
 
